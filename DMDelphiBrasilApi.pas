@@ -7,7 +7,7 @@ uses
   Data.Bind.Components, Data.Bind.ObjectScope;
 
 type
-  TDataModule1 = class(TDataModule)
+  TDataModuleBrasilApi = class(TDataModule)
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
@@ -18,7 +18,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  DataModuleBrasilApi: TDataModuleBrasilApi;
 
 implementation
 

@@ -28,10 +28,13 @@ package ProjDelphiBrasilApi;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  bindengine,
+  bindcomp,
+  RESTComponents;
 
 contains
   UDelphiBrasilApi in 'UDelphiBrasilApi.pas',
-  DMDelphiBrasilApi in 'DMDelphiBrasilApi.pas' {DataModule1: TDataModule};
+  DMDelphiBrasilApi in 'DMDelphiBrasilApi.pas' {DataModuleBrasilApi: TDataModule};
 
 end.

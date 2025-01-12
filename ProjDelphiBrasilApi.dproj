@@ -113,9 +113,12 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="bindcomp.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
         <DCCReference Include="UDelphiBrasilApi.pas"/>
         <DCCReference Include="DMDelphiBrasilApi.pas">
-            <Form>DataModule1</Form>
+            <Form>DataModuleBrasilApi</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

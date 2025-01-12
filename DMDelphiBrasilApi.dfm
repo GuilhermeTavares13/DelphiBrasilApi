@@ -1,6 +1,6 @@
-object DataModule1: TDataModule1
+object DataModuleBrasilApi: TDataModuleBrasilApi
   Height = 608
-  Width = 794
+  Width = 793
   PixelsPerInch = 120
   object RESTClient1: TRESTClient
     Params = <>
@@ -10,7 +10,10 @@ object DataModule1: TDataModule1
   end
   object RESTRequest1: TRESTRequest
     Client = RESTClient1
-    Params = <>
+    Params = <
+      item
+        Name = 'pattern'
+      end>
     Response = RESTResponse1
     SynchronizedEvents = False
     Left = 488
