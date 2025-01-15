@@ -13,7 +13,8 @@ type
   TDelphiBrasilApi = class(TComponent)
   private
   public
-    function Banks(Code : Integer) : TJSONValue;
+    function Banks() : String; overload;
+    function Banks(Code : Integer) : String; overload;
   published
   end;
 
@@ -26,11 +27,22 @@ begin
   RegisterComponents('DelphiBrasilApi',[TDelphiBrasilApi]);
 end;
 
-{ TDelphiBrasilApi }
-
-function TDelphiBrasilApi.Banks(Code: Integer): TJSONValue;
+function TDelphiBrasilApi.Banks: String;
 begin
-  DataModuleBrasilApi.RESTClient1.BaseURL := BRASIL_API_URL;
+  DataModuleBrasilApi.RESTClient1.BaseURL := BRASIL_API_URL + 'v1/';
+  DataModuleBrasilApi.RESTRequest1.Resource := 'banks.json';
+  DataModuleBrasilApi.RESTRequest1.Params[0].Value := 'banks';
+  DataModuleBrasilApi.RESTRequest1.Execute;
+  Result := DataModuleBrasilApi.RESTResponse1.JSONValue.ToString;
+end;
+
+function TDelphiBrasilApi.Banks(Code: Integer): String;
+begin
+  DataModuleBrasilApi.RESTClient1.BaseURL := BRASIL_API_URL + 'v1/' + IntToStr(code);
+  DataModuleBrasilApi.RESTRequest1.Resource := 'banks.json';
+  DataModuleBrasilApi.RESTRequest1.Params[0].Value := 'banks';
+  DataModuleBrasilApi.RESTRequest1.Execute;
+  Result := DataModuleBrasilApi.RESTResponse1.JSONValue.ToString;
 end;
 
 end.
